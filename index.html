@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>SearchCatalog</title>
+  </head>
+  <body>
+    <div class="header">
+      <button class="header__nike">Nike</button>
+      <div class="menu">
+        <button onclick="homeE()">Home</button>
+        <button onclick="catalogG()">Catalog</button>
+        <button onclick="purchaseE()">Purchase</button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="texts1">
+        <img class="nikee" src="nike.png" alt="#" />
+        <div class="texts1__buttons">
+          <button onclick="newSneakers()">New</button>
+          <button onclick="manSneakers()">Men</button>
+          <button onclick="womanSneakers()">Women</button>
+          <button onclick="kidSneakers()">Kids</button>
+        </div>
+        <div class="texts1__FavBasket">
+          <img src="heart.png" alt="#" onclick="showFavs()" />
+          <p class="fav__num" onclick="showFavs()" id="numsFavs"></p>
+          <img class="cart1" src="cart.png" alt="#" onclick="showBasket()" />
+          <p class="cart1__num" onclick="showBasket()" id="numsBaskets"></p>
+        </div>
+      </div>
+      <div class="texts2">
+        <h1>Move, Shop, Customise & Celebrate With Us</h1>
+        <h2>Get 20% promotion - 5 or more same Sneakers</h2>
+        <h3>Get 10% for total ckeck - if your total is 10000$ or more</h3>
+        <p>
+          No matter what you feel like doing today, It's better as a Member.
+        </p>
+      </div>
+      <div class="texts3">Get an extra 30% - Buy now!!!</div>
+      <video
+        src="video.mp4"
+        class="BigImg"
+        preload="auto"
+        muted
+        autoplay
+        loop
+      ></video>
+      <div class="hotOffers">
+        <h1>Hot Offers</h1>
+        <div class="hotDivs">
+          <div class="hotDiv1">
+            <img src="Hot1.png" alt="#" />
+            <p>Big range</p>
+          </div>
+          <div class="hotDiv2">
+            <img src="Hot2.png" alt="#" />
+            <p>Try this one</p>
+          </div>
+          <div class="hotDiv3">
+            <img src="Hot3.jpg" alt="#" />
+            <p>New Sneakers</p>
+          </div>
+        </div>
+      </div>
+      <div class="catalog__heading">
+        <button class="heading1">Catalog</button>
+      </div>
+      <div class="searcher" id="disP">
+        <img src="search.png" alt="#" id="lupe" />
+        <input type="text" name="#" id="searcher" placeholder="Search" />
+      </div>
+      <div class="basket" id="basKet"></div>
+      <div class="dont">
+        <h1>Don`t miss</h1>
+        <div class="dontMiss">
+          <div class="dontMiss1">
+            <img src="Dont1.jpg" alt="" />
+          </div>
+          <div class="dontMiss2">
+            <img src="Dont2.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" id="card"></div>
+    <div class="footer">
+      <p>Copyright: Ashot</p>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

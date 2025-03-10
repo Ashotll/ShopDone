@@ -1,0 +1,688 @@
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+button {
+  pointer-events: auto;
+  z-index: 1;
+}
+.SneakerImg {
+  transition: opacity 0.2s ease-in-out;
+}
+.fade-out {
+  opacity: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="button"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+html,
+body {
+  font-size: 100%;
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+input,
+form,
+textarea {
+  outline: none;
+}
+::after,
+::before,
+:focus,
+:active,
+:hover {
+  outline: none;
+}
+
+/* //////////////////////////////// */
+
+.main {
+  height: auto;
+  width: 100%;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 6%;
+  align-items: center;
+  padding: 0px 40px 0px 50px;
+  background-color: rgb(240, 240, 240);
+}
+.header__nike {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  background-color: rgb(240, 240, 240);
+}
+.menu button {
+  padding: 0px 10px;
+  width: auto;
+  color: black;
+  height: auto;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: rgb(240, 240, 240);
+  border-right: 1px black solid;
+}
+.menu :nth-child(3) {
+  border: 0px;
+}
+.texts1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 50px;
+  align-items: center;
+}
+.texts1 img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+.texts1__buttons {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+.texts1__buttons button {
+  font-size: 16px;
+  background-color: #fff;
+  color: black;
+}
+.texts1__FavBasket {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+.texts1__FavBasket img {
+  width: 30px;
+  height: 30px;
+}
+.texts1__FavBasket:nth-child(3) {
+  position: relative;
+}
+.cart1__num {
+  position: absolute;
+  left: 60px;
+  top: 0px;
+}
+.cart2__num {
+  position: absolute;
+  top: 4px;
+  right: 15px;
+}
+.texts2 {
+  height: auto;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(240, 240, 240);
+}
+.texts2 h1 {
+  font-size: 30px;
+}
+.texts2 h2 {
+  font-size: 25px;
+  color: red;
+}
+.texts2 h3 {
+  font-size: 20px;
+  color: red;
+}
+.texts2 p {
+  font-size: 20px;
+}
+.texts3 {
+  background-color: rgb(240, 240, 240);
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  align-content: center;
+  display: none;
+}
+.block {
+  display: block;
+}
+.BigImg {
+  width: 100%;
+  object-fit: cover;
+  height: 600px;
+}
+.hotOffers {
+  width: 100%;
+  margin: 50px 0px;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0px 20px;
+}
+.hotOffers h1 {
+  font-size: 30px;
+}
+.hotDivs {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.hotDivs div {
+  width: 100%;
+}
+.hotDivs div img {
+  width: 100%;
+  height: 500px;
+  margin: 20px 0px;
+  object-fit: cover;
+}
+.hotDivs div p {
+  font-size: 20px;
+}
+.basket {
+  height: auto;
+  width: 100%;
+}
+.loadMore {
+  text-align: center;
+  margin: 20px 0px 0px;
+}
+.loadMore button {
+  font-size: 16px;
+  background-color: #fff;
+  color: black;
+  text-decoration: underline;
+}
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 10px 0px 0px;
+  gap: 20px;
+  padding: 0px 20px;
+}
+.BigDiv img,
+.SneakerImg {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.BigDiv,
+.SmallDiv {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.SmallDiv :nth-child(2) {
+  font-size: 20px;
+}
+.SmallDiv :nth-child(3) {
+  font-size: 15px;
+}
+.AddFav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px 0px 0px;
+}
+.AddFav img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.TotalPricePromo {
+  text-decoration: line-through;
+  color: red;
+}
+.noRes,
+.empty {
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.catalog__ItemNames {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.catalog__ItemNames :nth-child(1) {
+  font-size: 20px;
+  margin: 10px 0px;
+  max-height: 23px;
+  overflow: hidden;
+}
+.catalog__ItemNames :nth-child(2) {
+  font-size: 15px;
+}
+.catalog__ItemPrice {
+  font-size: 15px;
+  margin: 0px 0px 5px 0px;
+}
+.catalog__ItemButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+}
+.catalog__ItemButtons div {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  align-items: center;
+}
+.catalog__ItemButtons div :nth-child(1),
+.catalog__ItemButtons div :nth-child(3) {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+.catalog__ItemButtons div:nth-child(2) {
+  font-size: 20px;
+}
+.TotalAmount {
+  font-size: 20px;
+  width: auto;
+  height: auto;
+  padding: 5px 15px;
+}
+.addIn,
+.removeFrom {
+  background-color: black;
+  font-size: 15px;
+  width: 100px;
+  height: 40px;
+  padding: 5px 10px;
+  color: white;
+}
+.catalog__heading {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+}
+.heading1 {
+  background-color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+  color: black;
+}
+.grayHeading {
+  background-color: rgb(240, 240, 240);
+}
+.disappear {
+  display: none;
+}
+.searcher {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 20px;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: end;
+  margin: 20px 0px 0px;
+  align-items: center;
+}
+.searcher input {
+  background-color: rgb(230, 230, 230);
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 10px 10px 10px 40px;
+}
+.searcher :nth-child(1) {
+  width: 25px;
+  height: 25px;
+  margin: 0px -35px 0px 0px;
+  z-index: 1;
+  background-color: rgb(230, 230, 230);
+}
+.searcher :nth-child(3) {
+  width: 30px;
+  height: 30px;
+  margin: 0px 0px 0px 10px;
+  background-color: #fff;
+}
+.numsInBasket,
+.numsInFavs {
+  font-size: 12px;
+  color: white;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  align-content: center;
+  text-align: center;
+  background-color: orange;
+}
+.texts1__FavBasket:nth-child(1) {
+  position: relative;
+}
+.fav__num {
+  position: absolute;
+  top: 0px;
+  right: 35px;
+}
+.searcher div img {
+  background-color: #fff;
+}
+.dont {
+  margin: 40px 20px 30px;
+}
+.dont h1 {
+  font-size: 30px;
+  margin: 0px 0px 20px;
+}
+.dontMiss {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.dontMiss div {
+  width: 50%;
+}
+.dontMiss img {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+.card {
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+.height {
+  height: 100%;
+}
+.cardBox {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-direction: row;
+}
+.cardHeadInfo {
+  margin: 20px 0px;
+}
+.cardInfo {
+  width: 500px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.cardInfo h1 {
+  font-size: 30px;
+}
+.cardInfo input {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px gray solid;
+  font-size: 20px;
+}
+.userName,
+.userAddress,
+.userPhone {
+  margin: 20px 0px;
+}
+.cardInputs {
+  width: 500px;
+  height: auto;
+  border: 1px solid gray;
+  background-color: rgb(250, 250, 250);
+  padding: 20px;
+  box-sizing: border-box;
+}
+.cardInputs img {
+  height: 100%;
+  width: 80px;
+  object-fit: cover;
+}
+.cardInputs input {
+  border: 1px gray solid;
+  font-size: 20px;
+}
+.cardNum,
+.cardName {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0px 0px 20px;
+}
+.cardName {
+  text-transform: uppercase;
+}
+.expireDate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 0px 20px;
+}
+.exp1 p,
+.exp2 p,
+.exp3 p {
+  font-size: 12px;
+  margin: 0px 0px 10px;
+}
+.exp1 input,
+.exp2 input,
+.exp3 input {
+  height: auto;
+  width: 50px;
+  padding: 10px;
+}
+.cardCheck {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 0px 20px;
+}
+.cardCheck input {
+  margin-right: 5px;
+  width: 15px;
+  height: 15px;
+}
+.cardButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardButtons button {
+  font-size: 15px;
+  color: white;
+  padding: 10px 20px;
+}
+.cardCancel {
+  background-color: red;
+}
+.cardPay {
+  background-color: orange;
+}
+.basketPurchaseBox {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+.basketPurchase {
+  background-color: white;
+  font-size: 20px;
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+  text-decoration: underline;
+  color: black;
+}
+.footer {
+  background-color: black;
+  height: 100px;
+  width: 100%;
+  margin: 30px 0px 0px;
+  align-content: center;
+}
+.footer p {
+  text-align: center;
+  font-size: 12px;
+  color: white;
+}
+@media (max-width: 1160px) {
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 10px 0px 0px;
+    gap: 20px;
+    padding: 0px 20px;
+  }
+  .dontMiss img {
+    height: 650px;
+  }
+  .hotDiv3 {
+    display: none;
+  }
+  .searcher input {
+    width: 150px;
+  }
+  .BigDiv {
+    height: 520px;
+  }
+  .SmallDiv {
+    height: 520px;
+  }
+  .SneakerImg,
+  .BigDiv img {
+    height: 420px;
+  }
+  .removeFrom {
+    padding: 10px 32px;
+    margin-right: 17px;
+    width: auto;
+  }
+  .card {
+    justify-content: center;
+    height: auto;
+  }
+  .cardInfo {
+    padding: 0px;
+  }
+  .cardBox {
+    flex-direction: column;
+    width: 500px;
+    gap: 0px;
+    height: auto;
+  }
+}
+@media (max-width: 760px) {
+  .header {
+    padding: 0px 10px 0px 20px;
+  }
+  .texts1 {
+    padding: 0px 20px;
+  }
+  .hotDiv2 {
+    display: none;
+  }
+  .catalog {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .dontMiss img {
+    height: 550px;
+  }
+  .BigDiv {
+    height: 520px;
+  }
+  .SmallDiv {
+    height: 520px;
+  }
+  .SneakerImg,
+  .BigDiv img {
+    height: 420px;
+  }
+  .searcher input {
+    width: 130px;
+  }
+  .catalog__ItemButtons div {
+    margin: 0px;
+  }
+  .cardBox,
+  .cardInfo,
+  .cardInputs {
+    width: 400px;
+  }
+}
+@media (max-width: 600px) {
+  .removeFrom {
+    padding: 10px 32px;
+    margin-right: 30px;
+    width: auto;
+  }
+  .dontMiss2 {
+    display: none;
+  }
+  .dontMiss div {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .searcher input {
+    width: 70px;
+  }
+  .catalog {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .SmallDiv {
+    height: 420px;
+  }
+  .BigDiv {
+    height: 420px;
+  }
+  .BigDiv img,
+  .SneakerImg {
+    height: 300px;
+  }
+  .nikee {
+    display: none;
+  }
+  .texts1 {
+    height: 50px;
+  }
+  .cardBox,
+  .cardInputs,
+  .cardInfo {
+    width: 300px;
+  }
+  .cardInputs {
+    padding: 10px;
+  }
+  .cardInputs img {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  .menu button {
+    font-size: 15px;
+    margin: 0px;
+    padding: 0px 5px;
+  }
+  .texts1__buttons {
+    gap: 10px;
+  }
+}
