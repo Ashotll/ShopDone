@@ -616,6 +616,15 @@ document.querySelector(".header__nike").addEventListener("click", () => {
   fillArray(catalog);
 });
 
+document.querySelector(".nikee").addEventListener("click", () => {
+  unPurch();
+  removeClasses();
+  removeClasses2();
+  loadmore = 6;
+  currentView = "all";
+  fillArray(catalog);
+});
+
 function homeE() {
   unPurch();
   removeClasses();
@@ -644,29 +653,29 @@ function purchaseE() {
   div.innerHTML = `
   <div class="cardInfo">
     <h1>Enter your name and address</h1>
-    <input type="text" maxlength="20" class="userName" id="userName" placeholder="First Name">
-    <input type="text" maxlength="20" class="userLastName" id="userLastName" placeholder="Last Name">
-    <input type="text" maxlength="40" class="userAddress" id="userAddress" placeholder="Address">
+<input type="text" maxlength="20" onkeydown="if (event.key === ' ') event.preventDefault();" class="userName" oninput="userName()" id="userName" placeholder="First Name">
+    <input type="text" maxlength="20" onkeydown="if (event.key === ' ') event.preventDefault();" class="userLastName" oninput="userLastName()" id="userLastName" placeholder="Last Name">
+    <input type="text" maxlength="40" class="userAddress" oninput="userAddress()" id="userAddress" placeholder="Address">
     <h1>Enter your contacts</h1>
-    <input type="number" class="userPhone" id="userPhone" placeholder="Phone Number">
-    <input type="email" class="userEmail" id="userEmail" placeholder="Email">
+    <input type="number" class="userPhone" id="userPhone" onkeydown="if (event.key === 'e') event.preventDefault();" oninput="userPhone()" placeholder="Phone Number">
+    <input type="email" class="userEmail" id="userEmail" onkeydown="if (event.key === ' ') event.preventDefault();" oninput="userEmail()" placeholder="Email">
   </div>
   <div>
     <h1 class="cardHeadInfo">Card Info</h1>
     <div class="cardInputs">
-      <input id="cardNum" class="cardNum" type="number" oninput="cardNum()" placeholder="Enter Card Number">
+      <input id="cardNum" class="cardNum" onkeydown="if (event.key === 'e') event.preventDefault();" type="number" oninput="cardNum()" placeholder="Enter Card Number">
       <div class="expireDate">
         <div class="exp1">
           <p>Expire Month</p>
-          <input id="cardMonth" type="number" oninput="cardMonth()" placeholder="MM">
+          <input id="cardMonth" type="number" onkeydown="if (event.key === 'e') event.preventDefault();" oninput="cardMonth()" placeholder="MM">
         </div>
         <div class="exp2">
           <p>Expire Year</p>
-          <input id="cardYear" type="number" oninput="cardYear()" placeholder="YY">
+          <input id="cardYear" type="number" onkeydown="if (event.key === 'e') event.preventDefault();" oninput="cardYear()" placeholder="YY">
         </div>
         <div class="exp3">
           <p>CCV</p>
-          <input id="cardCcv" type="number" oninput="cardCvv()" placeholder="CCV">
+          <input id="cardCcv" type="number" onkeydown="if (event.key === 'e') event.preventDefault();" oninput="cardCvv()" placeholder="CCV">
         </div>
         <img src="card.png" alt="#">
       </div>
@@ -689,8 +698,49 @@ function unPurch() {
   card.innerHTML = "";
 }
 
+function userName() {
+  const input = document.getElementById("userName");
+  input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
+}
+
+function userLastName() {
+  const input = document.getElementById("userLastName");
+  input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
+}
+
+function userAddress() {
+  const input = document.getElementById("userAddress");
+  input.value = input.value.replace(/[^a-zA-Z,0-9\s]/g, "");
+}
+
+function userPhone() {
+  const input = document.getElementById("userPhone");
+  input.value = input.value.replace(/[^0-9\s]/g, "");
+}
+
+function userEmail() {
+  const input = document.getElementById("userEmail");
+  input.value = input.value.replace(/[^a-zA-Z0-9@_.\s]/g, "");
+
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const domainParts = input.value.split("@")[1]?.split(".") || [];
+  const localPart = input.value.split("@")[0];
+
+  if (
+    emailRegex.test(input.value) &&
+    input.value.length <= 254 &&
+    localPart.length <= 64 &&
+    domainParts.every((part) => part.length <= 63)
+  ) {
+    input.style.borderColor = "green";
+  } else {
+    input.style.borderColor = "red";
+  }
+}
+
 function cardNum() {
   const input = document.getElementById("cardNum");
+  input.value = input.value.replace(/[^0-9\s]/g, "");
   if (input.value.length > 16) {
     input.value = input.value.slice(0, 16);
   }
