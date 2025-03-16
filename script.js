@@ -657,25 +657,25 @@ function purchaseE() {
     <input type="text" maxlength="20" onkeydown="if (event.key === ' ') event.preventDefault();" class="userLastName" oninput="userLastName()" id="userLastName" placeholder="Last Name">
     <input type="text" maxlength="40" class="userAddress" oninput="userAddress()" id="userAddress" placeholder="Address">
     <h1>Enter your contacts</h1>
-    <input type="text" class="userPhone" id="userPhone" oninput="userPhone()" placeholder="Phone Number">
+    <input type="text" class="userPhone" onkeydown="if (event.key === ' ') event.preventDefault();" id="userPhone" oninput="userPhone()" placeholder="Phone Number">
     <input type="email" class="userEmail" id="userEmail" onkeydown="if (event.key === ' ') event.preventDefault();" oninput="userEmail()" placeholder="Email">
   </div>
   <div>
     <h1 class="cardHeadInfo">Card Info</h1>
     <div class="cardInputs">
-      <input id="cardNum" class="cardNum" type="text" oninput="cardNum()" placeholder="Enter Card Number">
+      <input id="cardNum" class="cardNum" onkeydown="if (event.key === ' ') event.preventDefault();" type="text" oninput="cardNum()" placeholder="Enter Card Number">
       <div class="expireDate">
         <div class="exp1">
           <p>Expire Month</p>
-          <input id="cardMonth" type="text" oninput="cardMonth()" placeholder="MM">
+          <input id="cardMonth" type="text" onkeydown="if (event.key === ' ') event.preventDefault();" oninput="cardMonth()" placeholder="MM">
         </div>
         <div class="exp2">
           <p>Expire Year</p>
-          <input id="cardYear" type="text" oninput="cardYear()" placeholder="YY">
+          <input id="cardYear" type="text" onkeydown="if (event.key === ' ') event.preventDefault();" oninput="cardYear()" placeholder="YY">
         </div>
         <div class="exp3">
           <p>CCV</p>
-          <input id="cardCcv" type="text" oninput="cardCvv()" placeholder="CCV">
+          <input id="cardCcv" type="text" onkeydown="if (event.key === ' ') event.preventDefault();" oninput="cardCvv()" placeholder="CCV">
         </div>
         <img src="card.png" alt="#">
       </div>
