@@ -653,29 +653,29 @@ function purchaseE() {
   div.innerHTML = `
   <div class="cardInfo">
     <h1>Enter your name and address</h1>
-<input type="text" maxlength="20" onkeydown="if (event.key === ' ') event.preventDefault();" class="userName" oninput="userName()" id="userName" placeholder="First Name">
+    <input type="text" maxlength="20" onkeydown="if (event.key === ' ') event.preventDefault();" class="userName" oninput="userName()" id="userName" placeholder="First Name">
     <input type="text" maxlength="20" onkeydown="if (event.key === ' ') event.preventDefault();" class="userLastName" oninput="userLastName()" id="userLastName" placeholder="Last Name">
     <input type="text" maxlength="40" class="userAddress" oninput="userAddress()" id="userAddress" placeholder="Address">
     <h1>Enter your contacts</h1>
-    <input type="number" class="userPhone" id="userPhone" onkeydown="if (event.key === 'e') event.preventDefault();" oninput="userPhone()" placeholder="Phone Number">
+    <input type="text" class="userPhone" id="userPhone" oninput="userPhone()" placeholder="Phone Number">
     <input type="email" class="userEmail" id="userEmail" onkeydown="if (event.key === ' ') event.preventDefault();" oninput="userEmail()" placeholder="Email">
   </div>
   <div>
     <h1 class="cardHeadInfo">Card Info</h1>
     <div class="cardInputs">
-      <input id="cardNum" class="cardNum" onkeydown="if (event.key === 'e') event.preventDefault();" type="number" oninput="cardNum()" placeholder="Enter Card Number">
+      <input id="cardNum" class="cardNum" type="text" oninput="cardNum()" placeholder="Enter Card Number">
       <div class="expireDate">
         <div class="exp1">
           <p>Expire Month</p>
-          <input id="cardMonth" type="number" onkeydown="if (event.key === 'e') event.preventDefault();" oninput="cardMonth()" placeholder="MM">
+          <input id="cardMonth" type="text" oninput="cardMonth()" placeholder="MM">
         </div>
         <div class="exp2">
           <p>Expire Year</p>
-          <input id="cardYear" type="number" onkeydown="if (event.key === 'e') event.preventDefault();" oninput="cardYear()" placeholder="YY">
+          <input id="cardYear" type="text" oninput="cardYear()" placeholder="YY">
         </div>
         <div class="exp3">
           <p>CCV</p>
-          <input id="cardCcv" type="number" onkeydown="if (event.key === 'e') event.preventDefault();" oninput="cardCvv()" placeholder="CCV">
+          <input id="cardCcv" type="text" oninput="cardCvv()" placeholder="CCV">
         </div>
         <img src="card.png" alt="#">
       </div>
@@ -748,6 +748,7 @@ function cardNum() {
 
 function cardMonth() {
   const input = document.getElementById("cardMonth");
+  input.value = input.value.replace(/[^0-9\s]/g, "");
   if (input.value.length > 2) {
     input.value = input.value.slice(0, 2);
   }
@@ -755,6 +756,7 @@ function cardMonth() {
 
 function cardYear() {
   const input = document.getElementById("cardYear");
+  input.value = input.value.replace(/[^0-9\s]/g, "");
   if (input.value.length > 4) {
     input.value = input.value.slice(0, 4);
   }
@@ -762,6 +764,7 @@ function cardYear() {
 
 function cardCvv() {
   const input = document.getElementById("cardCcv");
+  input.value = input.value.replace(/[^0-9\s]/g, "");
   if (input.value.length > 3) {
     input.value = input.value.slice(0, 3);
   }
