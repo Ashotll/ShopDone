@@ -836,7 +836,7 @@ function loadMore() {
   } else if (currentView === "woman") {
     womanSneakers();
   } else if (currentView === "kid") {
-    kidsSneakers();
+    kidSneakers();
   } else {
     currentView = "all";
     fillArray(catalog);
